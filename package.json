@@ -1,0 +1,19 @@
+{
+  "name": "reactjs-egghead",
+  "version": "1.0.0",
+  "description": "Criação de uma app durante o curso de React do site Egghead.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Glaucia Lemos",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1"
+  }
+}
