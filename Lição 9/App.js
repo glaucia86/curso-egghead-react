@@ -1,32 +1,33 @@
 /**
  * Arquivo: app.js
  * Description: arquivo responsável por renderizar os componentes. 
- *     Acessando Propriedades 'Child'
+ *     Ciclo de Vida dos Componentes - Estrutura Básica
  * Author: Glaucia Lemos
  * Date: 16/09/2016
  */
 
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 
-/* Componente principal da aplicação */
 class App extends React.Component {
+    constructor() {
+        super();
+
+        this.state = { val: 0 };
+        this.update = this.update.bind(this);
+    }
+
+    /* Método para poder atualizar o estado de um determinado valor */
+    update() {
+        this.setState({ val: this.state.val +1 })
+    }
+    
     render() {
+        console.log('renderizando.....')
         return (
-            <Button>Eu <Heart/> React!!!!</Button>
+            <button onClick={this.update}>{this.state.val}</button>
         );
     }
 }
-
-/* Componente de Botão - exemplo para ver como acessar uma determinada propriedade através do 'children' */
-class Button extends React.Component {
-    render() {
-        return (
-            <button>{this.props.children}</button>
-        );
-    }
-}
-
-/* Acesso ao bootstrap dentro de um outro Componente */
-const Heart = () => <span className="glyphicon glyphicon-heart"></span>
 
 export default App;
